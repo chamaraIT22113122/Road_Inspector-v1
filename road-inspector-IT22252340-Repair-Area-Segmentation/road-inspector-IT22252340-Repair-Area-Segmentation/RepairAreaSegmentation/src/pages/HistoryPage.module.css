@@ -1,0 +1,53 @@
+/* HistoryPage.module.css – styling for the History page */
+
+.container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #0d1117, #151b26);
+  color: #e0e7ff;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #61dafb;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  color: #a6b1e1;
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
