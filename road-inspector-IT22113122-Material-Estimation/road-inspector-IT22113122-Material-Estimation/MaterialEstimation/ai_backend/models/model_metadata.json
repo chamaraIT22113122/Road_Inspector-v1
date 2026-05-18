@@ -1,0 +1,30 @@
+{
+  "project_level": "Research-Grade",
+  "research_citations": [
+    {
+      "title": "RDA Sri Lanka Standard Specifications",
+      "url": "https://rda.gov.lk"
+    },
+    {
+      "title": "IEEE 2024: Pothole Feature Extraction",
+      "url": "https://ieeexplore.ieee.org/document/10787321"
+    },
+    {
+      "title": "ASTM D6927: Asphalt Mix Standards",
+      "url": "https://www.astm.org/d6927-15.html"
+    }
+  ],
+  "models": {
+    "regression": {
+      "r2_score": 0.99936,
+      "mae_kg": 4.441,
+      "baseline_comparison": "DNN outperforms LR by 9.45%",
+      "architecture": "Swish-based Deep MLP (256-128-64)"
+    }
+  },
+  "constants": {
+    "density_kg_m3": 2350,
+    "compaction_factor": 1.2,
+    "bitumen_type": "60/70 Penetration Grade"
+  }
+}
