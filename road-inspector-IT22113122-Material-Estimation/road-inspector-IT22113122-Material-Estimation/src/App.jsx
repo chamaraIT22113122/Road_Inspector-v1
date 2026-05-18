@@ -4,6 +4,10 @@ import Sidebar from './components/Sidebar';
 import MaterialEstimationPage from './pages/MaterialEstimationPage';
 import DashboardPage from './pages/DashboardPage';
 import AnalyticsPage from './pages/AnalyticsPage';
+import DetectionPage from './pages/DetectionPage';
+import SegmentationPage from './pages/SegmentationPage';
+import TrafficPage from './pages/TrafficPage';
+import ReportPage from './pages/ReportPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -14,12 +18,12 @@ export default function App() {
       case 'estimator': return <MaterialEstimationPage />;
       case 'dashboard': return <DashboardPage />;
       case 'analytics': return <AnalyticsPage />;
-      case 'detection':
-      case 'reports':
+      case 'detection': return <DetectionPage />;
+      case 'segmentation': return <SegmentationPage />;
+      case 'traffic': return <TrafficPage />;
+      case 'reports': return <ReportPage />;
       case 'history':
       case 'settings':
-      case 'segmentation':
-      case 'traffic':
       default:
         return (
           <div className={styles.placeholder}>

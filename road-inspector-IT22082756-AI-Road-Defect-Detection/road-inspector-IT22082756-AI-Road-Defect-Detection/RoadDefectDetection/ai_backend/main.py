@@ -6,7 +6,10 @@ from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from ultralytics import YOLO
+try:
+    from ultralytics import YOLO
+except ImportError:
+    YOLO = None
 import cv2
 import numpy as np
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -48,22 +51,22 @@ if MONGO_URI:
         db_client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=5000)
         db = db_client["road_inspector"]
         db_connected = True
-        print("✅ Connected to MongoDB successfully.")
+        print("Connected to MongoDB successfully.")
     except Exception as e:
-        print(f"⚠️ MongoDB connection failed: {e}")
+        print(f"MongoDB connection failed: {e}")
 else:
-    print("⚠️ MONGO_URI not found. Running in Local Prototype Mode.")
+    print("MONGO_URI not found. Running in Local Prototype Mode.")
 
 # Load the YOLO model
 model = None
 try:
-    if os.path.exists(MODEL_PATH):
+    if YOLO and os.path.exists(MODEL_PATH):
         model = YOLO(MODEL_PATH)
-        print(f"✅ Model loaded successfully from {MODEL_PATH}")
+        print(f"Model loaded successfully from {MODEL_PATH}")
     else:
-        print(f"⚠️ Warning: Model not found at {MODEL_PATH}")
+        print(f"Warning: Model not found at {MODEL_PATH}")
 except Exception as e:
-    print(f"❌ Error loading model: {e}")
+    print(f"Error loading model: {e}")
 
 @app.get("/")
 def root():
