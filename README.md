@@ -12,9 +12,9 @@ The repository is organized into five core modules, each addressing a critical p
 | Module / Component | Focus Area | Technology Stack |
 | :--- | :--- | :--- |
 | **`AI Road Defect Detection`** | High-precision computer vision models to identify potholes, cracks, and road degradation. | Python, PyTorch/TensorFlow, OpenCV |
+| **`Repair Area Segmentation`** | Advanced semantic segmentation to calculate the precise area and depth of road damage. | Python, Segment Anything (SAM) / YOLO |
 | **`Material & Cost Estimation`** | Automated RDA-compliant material estimation, financial analysis, and cost projection dashboard. | React, Vite, Node.js, Python AI Backend |
 | **`Traffic Environment Scheduling`** | Intelligent scheduling and routing algorithms to minimize traffic disruption during repairs. | Java / Python, Scheduling Algorithms |
-| **`Repair Area Segmentation`** | Advanced semantic segmentation to calculate the precise area and depth of road damage. | Python, Segment Anything (SAM) / YOLO |
 | **`Citizen Portal`** | Public engagement web app for citizens to report defects, submit photos, and track repair status. | React / Vue, Node.js Web App |
 
 ---
@@ -28,7 +28,14 @@ The repository is organized into five core modules, each addressing a critical p
   * Integration with edge devices and vehicle dashcams.
   * Multi-class classification of road anomalies.
 
-### 2. 📊 Material & Cost Estimation
+### 2. 📐 Repair Area Segmentation
+* **Location:** `road-inspector-IT22252340-Repair-Area-Segmentation`
+* **Features:**
+  * Pixels-to-meters surface area calculation for patch repairs.
+  * 3D depth-map estimation using stereo imagery.
+  * High-precision masking for precise volume calculation.
+
+### 3. 📊 Material & Cost Estimation
 * **Location:** `road-inspector-IT22113122-Material-Estimation`
 * **Features:**
   * AI-driven material volume and cost prediction.
@@ -36,19 +43,12 @@ The repository is organized into five core modules, each addressing a critical p
   * Compliance with **RDA Sri Lanka** engineering standards.
   * Premium, responsive analytics dashboard.
 
-### 3. 🚦 Traffic Environment Scheduling
+### 4. 🚦 Traffic Environment Scheduling
 * **Location:** `road-inspector-IT22207968-Traffic-Env-Scheduling`
 * **Features:**
   * Traffic flow simulation and peak-hour avoidance scheduling.
   * Real-time routing updates for maintenance crews.
   * Dynamic dispatching based on priority and traffic congestion.
-
-### 4. 📐 Repair Area Segmentation
-* **Location:** `road-inspector-IT22252340-Repair-Area-Segmentation`
-* **Features:**
-  * Pixels-to-meters surface area calculation for patch repairs.
-  * 3D depth-map estimation using stereo imagery.
-  * High-precision masking for precise volume calculation.
 
 ### 5. 👥 Citizen Portal
 * **Location:** `road-inspector-citizen-portal`
@@ -56,6 +56,7 @@ The repository is organized into five core modules, each addressing a critical p
   * User-friendly, responsive interface for community reporting.
   * Location-tagging (GPS coordinates integration).
   * Automated ticketing and dispatch notification updates.
+
 
 ---
 
