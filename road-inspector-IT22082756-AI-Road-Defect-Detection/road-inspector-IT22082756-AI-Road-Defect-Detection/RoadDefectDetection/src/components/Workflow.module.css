@@ -1,0 +1,83 @@
+.workflowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow-x: auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-input);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.active .iconWrapper {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.active .label {
+  color: var(--text-primary);
+}
+
+.arrow {
+  position: absolute;
+  right: -20px;
+  top: 15px;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .workflowContainer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .step {
+    flex-direction: row;
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .arrow {
+    display: none;
+  }
+}

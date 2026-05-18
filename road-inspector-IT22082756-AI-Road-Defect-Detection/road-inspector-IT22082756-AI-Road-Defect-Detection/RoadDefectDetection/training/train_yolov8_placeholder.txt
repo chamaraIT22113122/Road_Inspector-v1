@@ -1,0 +1,6 @@
+Use this folder to store YOLOv8 training scripts and configuration.
+
+- datasets/ should contain images and labels for training.
+- models/ can store saved model weights.
+- predictions/ can store output images and inference results.
+- Connect your training pipeline to /backend/routes/training.js once ready.
